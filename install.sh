@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-mkdir -p "$HOME/.config/nvim" "$HOME/.config/wezterm" "$HOME/.config/zed"
-"$HOME/.codex"
+mkdir -p "$HOME/.config/nvim" "$HOME/.config/wezterm" "$HOME/.config/zed" "$HOME/.codex"
 ln -sfn "$DOTFILES_DIR/zsh/.zshrc" "$HOME/.zshrc"
 ln -sfn "$DOTFILES_DIR/git/.gitconfig" "$HOME/.gitconfig"
 ln -sfn "$DOTFILES_DIR/nvim/init.vim" "$HOME/.config/init.vim"
