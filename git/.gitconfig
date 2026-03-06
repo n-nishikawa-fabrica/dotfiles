@@ -1,0 +1,21 @@
+# This is Git's per-user configuration file.
+[user]
+	name = n-nishikawa
+	email = n-nishikawa@fabrica-com.co.jp
+# Please adapt and uncomment the following lines:
+#	name = n-nishikawa 
+#	email = n-nishikawa@fabrica-com.co.jp 
+[init]
+	defaultBranch = main
+[alias]
+       sw = switch
+	   swc = switch -c
+	   com = commit -m
+	   st = status
+	   wt = worktree
+       vacuum = "!f () { git checkout $1; git branch --merged|egrep -v '\\*|master|init-enviroment|main|develop'|xargs git branch -d; git fetch --prune; };f"
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
